@@ -1,13 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Jone Lee</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    Hello world
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus in corporis quia rerum, perspiciatis assumenda dolorem, odio excepturi, reprehenderit nesciunt vel beatae mollitia reiciendis molestiae vero incidunt ipsum. Debitis, atque?
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex autem possimus impedit odio officia, harum ullam maiores. Temporibus error ipsa voluptatibus voluptatum sit dolorum, facere quisquam eveniet pariatur ipsum saepe sapiente, eligendi et magnam!
+    <header class="navbar">
+        <div class="logo">
+            <img src="avatar.jpg" alt="Profile" class="logo-img">
+            <span>INBIO</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Resume</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-buy">Buy Now</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <p class="intro">WELCOME TO MY WORLD</p>
+            <h1>Hi, I’m <span class="highlight">Jone Lee</span></h1>
+            <h2 class="typing">a <span id="typed"></span></h2>
+            <p class="description">
+                I use animation as a third dimension by which to simplify experiences
+                and guiding through each and every interaction. I’m not adding motion
+                just to spruce things up, but doing it in meaningful ways.
+            </p>
+            <div class="social">
+                <div>
+                    <p>FIND WITH ME</p>
+                    <div class="icons">
+                        <a href="#"><img src="facebook.svg" alt="Facebook"></a>
+                        <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div>
+                    <p>BEST SKILL ON</p>
+                    <div class="icons">
+                        <a href="#"><img src="invision.svg" alt="Invision"></a>
+                        <a href="#"><img src="sketch.svg" alt="Sketch"></a>
+                        <a href="#"><img src="figma.svg" alt="Figma"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="profile.png" alt="Profile Picture">
+        </div>
+    </section>
+
+    <script>
+        // Optional typing animation effect
+        const words = ["Designer", "Developer", "Freelancer"];
+        let i = 0, j = 0, current = '', isDeleting = false;
+        const typed = document.getElementById('typed');
+
+        function type() {
+            current = words[i];
+            typed.textContent = current.substring(0, j);
+            if (!isDeleting && j < current.length) j++;
+            else if (isDeleting && j > 0) j--;
+            else if (j === current.length) isDeleting = true;
+            else if (j === 0) { isDeleting = false; i = (i + 1) % words.length; }
+            setTimeout(type, isDeleting ? 100 : 150);
+        }
+        type();
+    </script>
 </body>
+
 </html>

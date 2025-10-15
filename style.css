@@ -19,10 +19,28 @@ header {
     background: transparent;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    /* vertically centers text and image */
+    gap: 10px;
+    /* space between image and text */
+}
+
 .logo {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 20px;
     letter-spacing: 1px;
+}
+
+.logo-img {
+    width: 100px;
+    /* adjust as needed */
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -52,8 +70,8 @@ nav a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 80px;
-    min-height: 90vh;
+    padding: 1px 180px;
+    min-height: 10vh;
 }
 
 .text-content {
@@ -74,7 +92,7 @@ h1 {
 }
 
 h1 span {
-    color: #ff007a;
+    color: #ff007b;
 }
 
 h2 {
